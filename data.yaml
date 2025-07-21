@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 25
+names: ['Auto', 'Bus', 'Cycle', 'Helmet', 'Load Auto', 'LoadRickshaw', 'NoHelmet', 'Pedestrian', 'Van', 'ambulance', 'auto-rikshaw', 'bike', 'bus', 'car', 'green_light', 'helmet', 'license_plate', 'motobike', 'motorcyclist', 'police vehicle', 'red_light', 'stop_line', 'tempo', 'truck', 'yellow_light']
+
+roboflow:
+  workspace: visionary-workspace
+  project: computer_vision-k64gk
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/visionary-workspace/computer_vision-k64gk/dataset/1
