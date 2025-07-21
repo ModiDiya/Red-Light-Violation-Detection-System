@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Detection Results</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+  <div class="max-w-5xl mx-auto mt-10 p-6 bg-white shadow-xl rounded-xl">
+    <h2 class="text-2xl font-bold text-green-600 mb-4 text-center">Violation Detection Result</h2>
+    {% if violation_type %}
+    <h3 style="color:red;">Violation Type: {{ violation_type }}</h3>
+    {% endif %}
+    {% if license_plate %}
+    <p><strong>License Plate:</strong> {{ license_plate }}</p>
+    {% endif %}
+    {% if caption %}
+    <p><strong>Description:</strong> {{ caption }}</p>
+    {% endif %}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-lg font-semibold text-center mb-2">📤 Uploaded Media</h3>
+        {% if input_img.lower().endswith(('.mp4', '.mov', '.avi', '.mkv', '.webm')) %}
+        <video controls class="rounded-xl border border-gray-300 w-full">
+          <source src="{{ url_for('static', filename=input_img) }}" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {% else %}
+        <img src="{{ url_for('static', filename=input_img) }}" class="rounded-xl border border-gray-300 w-full" />
+        {% endif %}
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-center mb-2">✅ Detection Output</h3>
+        {% if result_img.lower().endswith(('.mp4', '.mov', '.avi', '.mkv', '.webm')) %}
+        <video controls class="rounded-xl border border-gray-300 w-full">
+          <source src="{{ url_for('static', filename=result_img) }}" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {% else %}
+        <img src="{{ url_for('static', filename=result_img) }}" class="rounded-xl border border-gray-300 w-full" />
+        {% endif %}
+      </div>
+    </div>
+    <div class="text-center mt-6">
+      <a href="{{ url_for('home') }}" class="text-blue-600 hover:underline">← Back to Home</a>
+    </div>
+  </div>
+</body>
+
+</html>

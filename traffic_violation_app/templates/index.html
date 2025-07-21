@@ -1,0 +1,27 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Traffic Violation Detection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="max-w-3xl mx-auto mt-10 p-6 bg-white shadow-xl rounded-xl">
+    <h1 class="text-3xl font-bold text-center text-red-600 mb-6">🚦 Traffic Violation Detection System</h1>
+    <form action="/detect" method="POST" enctype="multipart/form-data" class="space-y-6">
+      <div>
+        <label class="block text-lg font-medium text-gray-700">Upload Video or Image</label>
+        <input type="file" name="media" accept="video/*,image/*" required
+               class="mt-2 block w-full text-sm text-gray-500 border border-gray-300 p-2 rounded-lg">
+      </div>
+      <div class="flex justify-center">
+        <button type="submit"
+                class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg shadow-md">
+          Detect Violations
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
