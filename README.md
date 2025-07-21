@@ -1,7 +1,7 @@
 🚦 Traffic Violation Detection System
 An AI-powered system that detects traffic violations such as red light jumping, helmet-less riding, and wrong-side driving using YOLOv8. It logs violations with timestamps and provides a simple web interface using Flask for real-time video analysis.
-An AI-powered computer vision system that automatically detects traffic violations such as **red light jumping**, **helmetless riding**, **wrong-side driving**, and optionally performs **license plate recognition** using YOLOv8.
-![Traffic Violation Banner](https://via.placeholder.com/1000x300.png?text=Traffic+Violation+Detection+System
+An AI-powered computer vision system that automatically detects traffic violations such as red light jumping, helmetless riding and optionally performs license plate recognition using YOLOv8.
+
 
 📌 Project Overview
 
